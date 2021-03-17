@@ -50,10 +50,7 @@ public class ClsMain extends JFrame {
 		System.out.println("Saved to: " + sFileNamePath);
 		boolIsSaved = true;
 		w.flush();
-		w.close();
-
-
-
+		w.close()
 	}
 
 	private static void fnChooseFile() throws InvocationTargetException, InterruptedException {
@@ -61,20 +58,6 @@ public class ClsMain extends JFrame {
                 JFileChooser fileChooser = new JFileChooser();
 
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("PGM FILES", "pgm");
-
-                /*FileFilter fileFilter = new FileFilter() {
-                    public String getDescription() {
-                        return "PGM Documents (*.pgm)";
-                    }
-
-                    public boolean accept(File f) {
-                        if (f.isDirectory()) {
-                            return true;
-                        } else {
-                            return f.getName().toLowerCase().endsWith(".pdf");
-                        }
-                    }
-                };*/
 
                 fileChooser.setFileFilter(filter);
                 fileChooser.setDialogTitle("Open File");
@@ -125,10 +108,7 @@ public class ClsMain extends JFrame {
                 aiGrauWert[y][x] = Integer.parseInt(reader.readLine());
             }
         }
-
-
 		reader.close();
-
 	}
 
 	private static void fnClear() {
@@ -154,14 +134,6 @@ public class ClsMain extends JFrame {
 			for (int i = 0; i < vector.length; i++) {
 				vector[i] = list.get(i);
 			}
-
-			//System.out.println(Arrays.toString(vector));
-			//for (int i = 0; i < vector.length; i++) {
-			//	if (vector[i]  null) {
-			//		vector[i] = 0;
-			//	}
-			//}
-
 	}
 
 	private static void fnImageViewer(int[][] aiGrauWert)  {
@@ -176,8 +148,7 @@ public class ClsMain extends JFrame {
 					frame.setSize(iSizeX, iSizeY);
 					BufferedImage bImage = new BufferedImage(iSizeX, iSizeY , BufferedImage.TYPE_INT_RGB);
 
-						Color myColor; // Color white
-
+						Color myColor;
 
 						for (int y= 0; y <= iSizeY-1; y++) {
 							for (int x= 0; x <= iSizeX-1; x++) {
@@ -232,7 +203,7 @@ public class ClsMain extends JFrame {
 		}
 		BufferedImage bImage = new BufferedImage(iSizeX, iSizeY , BufferedImage.TYPE_INT_RGB);
 
-		Color myColor; // Color white
+		Color myColor;
 
 		for (int y= 0; y <= iSizeY-1; y++) {
 			for (int x= 0; x <= iSizeX-1; x++) {
@@ -262,38 +233,9 @@ public class ClsMain extends JFrame {
 				Color newC = new Color(red, green, blue);
 				bDest.setRGB(x,y,newC.getRGB());
 
-
-				//if (bDest.getRGB(x,y) < 0) {
-				//	aiGrauWert[x][y] = 0;
-				//} else if (bDest.getRGB(x,y) > 255) {
-				//	aiGrauWert[x][y] = 255;
-				//} else {
-				//	aiGrauWert[y][x] = bDest.getRGB(x, y);
-				//}
-
 				aiGrauWert[y][x] = (red+green+blue)/3;
 			}
 		}
-
-
-			//File input = new File(“location of your RGB image”);
-			//image = ImageIO.read(input);
-			//width = image.getWidth();
-			//height = image.getHeight();
-			//for(int i=0; i<height; i++) {
-			//	for(int j=0; j<width; j++) {
-			//		Color c = new Color(image.getRGB(j, i));
-			//		int red = (int)(c.getRed() * 0.299);
-			//		int green = (int)(c.getGreen() * 0.587);
-		//			int blue = (int)(c.getBlue() *0.114);
-		//			Color newColor = new Color(red+green+blue, red+green+blue,red+green+blue);
-	//				image.setRGB(j,i,newColor.getRGB());
-	//			}
-	//		}
-	//		File ouptut = new File(“Where to be placed and its name”);
-//			System.out.println(“Done”);
-//			ImageIO.write(image, “jpg”, ouptut);
-
 	}
 
 
@@ -492,12 +434,7 @@ public class ClsMain extends JFrame {
 				 }
 			 }
 		 }
-
-
-
-
 		// TODO ENTER YOUR CODE ABOVE ------------- END
-
 	}
 
 }
